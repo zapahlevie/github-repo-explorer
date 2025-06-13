@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-type ExplorerState = {
+export type ExplorerState = {
   query: string;
   searchQuery: string;
   setQuery: (q: string) => void;

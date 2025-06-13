@@ -1,5 +1,5 @@
 // formatNumber.test.ts
-import { formatCompactNumber } from '../utils/formatNumber';
+import { formatCompactNumber } from './formatNumber';
 
 describe('formatCompactNumber', () => {
   it('formats numbers less than 1,000 correctly', () => {

@@ -2,14 +2,15 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import SearchBar from '../components/search/SearchBar';
-import * as store from '../store/useExplorerStore';
-import * as useSearchUsersModule from '../hooks/useSearchUsers';
+import SearchBar from './SearchBar';
+import * as store from '../../store/useExplorerStore';
+import type { ExplorerState } from '../../store/useExplorerStore';
+import * as useSearchUsersModule from '../../hooks/useSearchUsers';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { vi } from 'vitest';
 
-vi.mock('../store/useExplorerStore');
-vi.mock('../hooks/useSearchUsers');
+vi.mock('../../store/useExplorerStore');
+vi.mock('../../hooks/useSearchUsers');
 
 const queryClient = new QueryClient();
 
@@ -18,7 +19,7 @@ describe('SearchBar', () => {
   const setSearchQuery = vi.fn();
 
   let queryValue = '';
-  let storeMock: any;
+  let storeMock: Partial<ExplorerState>;
   beforeEach(() => {
     vi.clearAllMocks();
     queryValue = '';

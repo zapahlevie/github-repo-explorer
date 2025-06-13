@@ -1,14 +1,14 @@
 // RepoList.test.tsx
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import RepoList from '../components/repo/RepoList';
-import * as useUserRepoModule from '../hooks/useUserRepo';
-import * as formatNumberModule from '../utils/formatNumber';
+import RepoList from './RepoList';
+import * as useUserRepoModule from '../../hooks/useUserRepo';
+import * as formatNumberModule from '../../utils/formatNumber';
 import { vi } from 'vitest';
 
-vi.mock('../hooks/useUserRepo');
-vi.mock('../utils/formatNumber');
-vi.mock('../components/repo/SkeletonRepoList', () => ({
+vi.mock('../../hooks/useUserRepo');
+vi.mock('../../utils/formatNumber');
+vi.mock('./SkeletonRepoList', () => ({
   __esModule: true,
   default: vi.fn(() => <div data-testid="skeleton-repo-list">Skeleton Repo List</div>),
 }));

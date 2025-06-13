@@ -1,18 +1,18 @@
 // UserList.test.tsx
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import UserList from '../components/user/UserList';
-import * as useAccordionModule from '../hooks/useAccordion';
-import * as useSearchUsersModule from '../hooks/useSearchUsers';
+import UserList from './UserList';
+import * as useAccordionModule from '../../hooks/useAccordion';
+import * as useSearchUsersModule from '../../hooks/useSearchUsers';
 import { vi } from 'vitest';
 
-vi.mock('../hooks/useAccordion');
-vi.mock('../hooks/useSearchUsers');
-vi.mock('../components/repo/RepoList', () => ({
+vi.mock('../../hooks/useAccordion');
+vi.mock('../../hooks/useSearchUsers');
+vi.mock('../repo/RepoList', () => ({
   __esModule: true,
   default: vi.fn(() => <div data-testid="repo-list">Repo List</div>),
 }));
-vi.mock('../components/user/SkeletonUserList', () => ({
+vi.mock('../user/SkeletonUserList', () => ({
   __esModule: true,
   default: vi.fn(() => <div data-testid="skeleton-user-list">Skeleton User List</div>),
 }));

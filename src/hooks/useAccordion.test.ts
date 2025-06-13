@@ -1,7 +1,7 @@
 // useAccordion.test.ts
 import { describe, it, expect } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
-import { useAccordion } from '../hooks/useAccordion';
+import { useAccordion } from './useAccordion';
 
 describe('useAccordion', () => {
   it('should initialize expanded as null', () => {
